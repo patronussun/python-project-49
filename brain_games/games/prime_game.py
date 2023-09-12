@@ -21,7 +21,7 @@ def brain_prime(start_wins_count):
     games_to_win = 3
     random_num = get_random_int(end_with=100)
 
-    print('Answer "yes" if the number is prime, otherwise answer "no".')
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
     print(f'Question: {random_num}')
 
     answer = prompt.string('Your answer: ')
