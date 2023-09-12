@@ -30,10 +30,10 @@ def brain_even(wins_count):
 
     if wins_count == games_to_win:
         return True
-    if answer == correct_answer and wins_count < games_to_win:
+    if str(answer) == str(correct_answer) and wins_count < games_to_win:
         print('Correct')
         return brain_even(wins_count + 1)
-    elif answer != correct_answer:
+    elif str(answer) != str(correct_answer):
         print(f"'{answer}' is wrong answer ;(. "
               f"Correct answer was '{correct_answer}'.")
         return False
