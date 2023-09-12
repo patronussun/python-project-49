@@ -1,13 +1,11 @@
-#!/usr/bin/env python3
 import prompt
 import math
-
 from brain_games.utils import get_random_int
 from brain_games.games.common import is_win
 
 
 def get_gcd(first, second):
-    return math.gcd(first, second) 
+    return math.gcd(first, second)
 
 
 def brain_gcd(start_wins_count):
@@ -21,5 +19,6 @@ def brain_gcd(start_wins_count):
     answer = prompt.string('Your answer: ')
     correct_answer = get_gcd(random_first, random_second)
 
-    result =  is_win(start_wins_count, games_to_win, answer, correct_answer, brain_gcd)
+    result = is_win(start_wins_count, games_to_win, answer, correct_answer,
+                    brain_gcd)
     return result

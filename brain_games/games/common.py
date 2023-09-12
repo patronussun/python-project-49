@@ -10,7 +10,7 @@ def is_win(wins_count, games_to_win, answer, correct_answer, game):
         print('Correct!')
         return game(wins_count + 1)
 
-    
+
 def game_result(name, result):
     if result is False:
         print(f'Let\'s try again, {name}!')

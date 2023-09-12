@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import prompt
 from brain_games.utils import get_random_int
 from brain_games.games.common import is_win
@@ -11,7 +10,7 @@ def get_progression():
     progression = []
     for number in range(length):
         progression.append(first_number + number * step)
-    
+
     return progression
 
 
@@ -19,9 +18,11 @@ def get_hidden_element(progression):
     index = get_random_int(end_with=len(progression) - 1)
     return (index, progression[index])
 
+
 def generate_question(progression, index):
     progression[index] = '..'
     return ' '.join(str(item) for item in progression)
+
 
 def brain_progression(start_wins_count):
     games_to_win = 3
@@ -34,5 +35,6 @@ def brain_progression(start_wins_count):
 
     answer = prompt.string('Your answer: ')
 
-    result = is_win(start_wins_count, games_to_win, answer, correct_answer, brain_progression)
+    result = is_win(start_wins_count, games_to_win, answer, correct_answer,
+                    brain_progression)
     return result

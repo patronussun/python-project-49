@@ -6,7 +6,7 @@ from brain_games.games.progression_game import brain_progression
 
 def main():
     name = welcome_user()
-    result = brain_progression(start_wins_count = 1)
+    result = brain_progression(start_wins_count=1)
     game_result(name, result)
 
 

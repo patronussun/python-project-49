@@ -1,7 +1,5 @@
-#!/usr/bin/env python3
 import prompt
 import math
-
 from brain_games.utils import get_random_int
 from brain_games.games.common import is_win
 
@@ -29,5 +27,6 @@ def brain_prime(start_wins_count):
     answer = prompt.string('Your answer: ')
     correct_answer = get_correct_answer(random_num)
 
-    result =  is_win(start_wins_count, games_to_win, answer, correct_answer, brain_prime)
-    return result 
+    result = is_win(start_wins_count, games_to_win, answer, correct_answer,
+                    brain_prime)
+    return result

@@ -6,7 +6,7 @@ from brain_games.games.prime_game import brain_prime
 
 def main():
     name = welcome_user()
-    result = brain_prime(start_wins_count = 1)
+    result = brain_prime(start_wins_count=1)
     game_result(name, result)
 
 

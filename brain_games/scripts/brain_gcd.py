@@ -6,7 +6,7 @@ from brain_games.games.gcd_game import brain_gcd
 
 def main():
     name = welcome_user()
-    result = brain_gcd(start_wins_count = 1)
+    result = brain_gcd(start_wins_count=1)
     game_result(name, result)
 
 

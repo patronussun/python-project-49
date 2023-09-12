@@ -6,7 +6,7 @@ from brain_games.games.even_game import brain_even
 
 def main():
     name = welcome_user()
-    result = brain_even(start_wins_count = 1)
+    result = brain_even(start_wins_count=1)
     game_result(name, result)
 
 

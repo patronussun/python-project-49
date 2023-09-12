@@ -6,7 +6,7 @@ from brain_games.games.calc_game import brain_calc
 
 def main():
     name = welcome_user()
-    result = brain_calc(start_wins_count = 1)
+    result = brain_calc(start_wins_count=1)
     game_result(name, result)
 
 
