@@ -36,5 +36,5 @@ def brain_calc(start_wins_count):
     correct_answer = get_correct_answer(random_first,
                                         random_second, random_sign)
 
-    result =  is_win(start_wins_count, games_to_win, answer, correct_answer, brain_calc)
+    result = is_win(start_wins_count, games_to_win, answer, correct_answer, brain_calc)
     return result

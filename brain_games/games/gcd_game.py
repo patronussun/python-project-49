@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import prompt
-import random
 import math
 
 from brain_games.utils import get_random_int
