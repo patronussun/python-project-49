@@ -1,6 +1,6 @@
 import prompt
 from brain_games.utils import get_random_int
-from brain_games.games.common import is_win
+from brain_games.common import is_win
 
 
 def get_progression():
@@ -25,7 +25,6 @@ def generate_question(progression, index):
 
 
 def brain_progression(start_wins_count):
-    games_to_win = 3
     progression = get_progression()
     index, correct_answer = get_hidden_element(progression)
     question = generate_question(progression, index)
@@ -35,6 +34,5 @@ def brain_progression(start_wins_count):
 
     answer = prompt.string('Your answer: ')
 
-    result = is_win(start_wins_count, games_to_win, answer, correct_answer,
-                    brain_progression)
+    result = is_win(start_wins_count, answer, correct_answer, brain_progression)
     return result

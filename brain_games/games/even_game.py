@@ -1,6 +1,6 @@
 import prompt
 from brain_games.utils import get_random_int
-from brain_games.games.common import is_win
+from brain_games.common import is_win
 
 
 def is_even(number):
@@ -13,7 +13,6 @@ def get_correct_answer(number):
 
 
 def brain_even(start_wins_count):
-    games_to_win = 3
     random_num = get_random_int(end_with=100)
 
     print('Answer "yes" if the number is even, otherwise answer "no".')
@@ -22,6 +21,5 @@ def brain_even(start_wins_count):
     answer = prompt.string('Your answer: ')
     correct_answer = get_correct_answer(random_num)
 
-    result = is_win(start_wins_count, games_to_win, answer, correct_answer,
-                    brain_even)
+    result = is_win(start_wins_count, answer, correct_answer, brain_even)
     return result
