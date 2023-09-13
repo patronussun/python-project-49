@@ -1,5 +1,6 @@
 from brain_games.cli import welcome_user
 
+
 def is_win(wins_count, answer, correct_answer, game):
     GAMES_TO_WIN = 3
     if wins_count == GAMES_TO_WIN and str(answer) == str(correct_answer):
@@ -19,6 +20,7 @@ def game_result(name, result):
         print(f'Let\'s try again, {name}!')
     if result is True:
         print(f'Congratulations, {name}!')
+
 
 def game(current_game):
     name = welcome_user()
