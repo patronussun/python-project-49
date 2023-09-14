@@ -1,11 +1,6 @@
-import prompt
 import random
 from brain_games.utils import get_random_int
-from brain_games.common import is_win
-
-
-def calc_result(first, second):
-    return first + second
+from brain_games.common import make_game
 
 
 def get_correct_answer(first, second, sign):
@@ -30,11 +25,10 @@ def brain_calc(start_wins_count):
     random_sign = get_random_math()
 
     print('What is the result of the expression?')
-    print(f'Question: {random_first} {random_sign} {random_second}')
+    question = f'Question: {random_first} {random_sign} {random_second}'
 
-    answer = prompt.string('Your answer: ')
     correct_answer = get_correct_answer(random_first,
                                         random_second, random_sign)
 
-    result = is_win(start_wins_count, answer, correct_answer, brain_calc)
+    result = make_game(start_wins_count, question, correct_answer, brain_calc)
     return result

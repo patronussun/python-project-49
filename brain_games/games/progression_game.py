@@ -1,6 +1,5 @@
-import prompt
 from brain_games.utils import get_random_int
-from brain_games.common import is_win
+from brain_games.common import make_game
 
 
 def get_progression():
@@ -27,12 +26,11 @@ def generate_question(progression, index):
 def brain_progression(start_wins_count):
     progression = get_progression()
     index, correct_answer = get_hidden_element(progression)
-    question = generate_question(progression, index)
+    progression_with_missing_index = generate_question(progression, index)
 
     print('What number is missing in the progression?')
-    print(f'Question: {question}')
+    question = f'Question: {progression_with_missing_index}'
 
-    answer = prompt.string('Your answer: ')
-
-    result = is_win(start_wins_count, answer, correct_answer, brain_progression)
+    result = make_game(start_wins_count, question, correct_answer,
+                       brain_progression)
     return result
