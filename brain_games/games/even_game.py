@@ -14,13 +14,17 @@ def get_correct_answer(number):
     return 'yes' if result_even is True else 'no'
 
 
-def brain_even(start_wins_count):
+def generate_round():
     random_num = get_random_int(end_with=100)
-
-    print(DESCRIPTION)
+    correct_answer = get_correct_answer(random_num)
     question = f'Question: {random_num}'
 
-    correct_answer = get_correct_answer(random_num)
+    return (question, correct_answer)
+
+
+def brain_even(start_wins_count):
+    print(DESCRIPTION)
+    question, correct_answer = generate_round()
 
     result = make_game(start_wins_count, question, correct_answer, brain_even)
     return result

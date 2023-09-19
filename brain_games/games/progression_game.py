@@ -26,14 +26,16 @@ def generate_question(progression, index):
     return ' '.join(str(item) for item in progression)
 
 
-def brain_progression(start_wins_count):
+def generate_round():
     progression = get_progression()
     index, correct_answer = get_hidden_element(progression)
     progression_with_missing_index = generate_question(progression, index)
-
-    print(DESCRIPTION)
     question = f'Question: {progression_with_missing_index}'
+    return (question, correct_answer)
 
+
+def brain_progression(start_wins_count):
+    question, correct_answer = generate_question()
     result = make_game(start_wins_count, question, correct_answer,
                        brain_progression)
     return result

@@ -5,6 +5,7 @@ from brain_games.cli import welcome_user
 def make_game(wins_count, question, correct_answer, current_game):
     GAMES_TO_WIN = 3
 
+    print(current_game.DESCRIPTION)
     print(question)
     answer = prompt.string('Your answer: ')
 
@@ -27,7 +28,7 @@ def print_game_result(name, result):
         print(f'Congratulations, {name}!')
 
 
-def game(current_game):
+def run_game(game):
     name = welcome_user()
-    result = current_game(start_wins_count=1)
+    result = game(start_wins_count=1)
     print_game_result(name, result)

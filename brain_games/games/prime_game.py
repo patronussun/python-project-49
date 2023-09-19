@@ -19,13 +19,14 @@ def get_correct_answer(number):
     return 'yes' if is_prime(number) else 'no'
 
 
-def brain_prime(start_wins_count):
+def generate_round():
     random_num = get_random_int(end_with=100)
-
-    print(DESCRIPTION)
     question = f'Question: {random_num}'
-
     correct_answer = get_correct_answer(random_num)
+    return (question, correct_answer)
 
+
+def brain_prime(start_wins_count):
+    question, correct_answer = generate_round()
     result = make_game(start_wins_count, question, correct_answer, brain_prime)
     return result
