@@ -1,6 +1,5 @@
 import random
 from brain_games.utils import get_random_int
-from brain_games.common import run_game
 
 
 DESCRIPTION = 'What is the result of the expression?'

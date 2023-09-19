@@ -1,6 +1,5 @@
 import math
 from brain_games.utils import get_random_int
-from brain_games.common import make_game
 
 
 DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
@@ -24,9 +23,3 @@ def generate_round():
     question = f'Question: {random_num}'
     correct_answer = get_correct_answer(random_num)
     return (question, correct_answer)
-
-
-def brain_prime(start_wins_count):
-    question, correct_answer = generate_round()
-    result = make_game(start_wins_count, question, correct_answer, brain_prime)
-    return result

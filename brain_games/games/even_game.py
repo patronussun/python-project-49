@@ -1,5 +1,4 @@
 from brain_games.utils import get_random_int
-from brain_games.common import make_game
 
 
 DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
@@ -20,11 +19,3 @@ def generate_round():
     question = f'Question: {random_num}'
 
     return (question, correct_answer)
-
-
-def brain_even(start_wins_count):
-    print(DESCRIPTION)
-    question, correct_answer = generate_round()
-
-    result = make_game(start_wins_count, question, correct_answer, brain_even)
-    return result

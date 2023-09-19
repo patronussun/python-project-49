@@ -1,5 +1,4 @@
 from brain_games.utils import get_random_int
-from brain_games.common import make_game
 
 
 DESCRIPTION = 'What number is missing in the progression?'
@@ -32,10 +31,3 @@ def generate_round():
     progression_with_missing_index = generate_question(progression, index)
     question = f'Question: {progression_with_missing_index}'
     return (question, correct_answer)
-
-
-def brain_progression(start_wins_count):
-    question, correct_answer = generate_question()
-    result = make_game(start_wins_count, question, correct_answer,
-                       brain_progression)
-    return result
