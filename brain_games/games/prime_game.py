@@ -3,6 +3,9 @@ from brain_games.utils import get_random_int
 from brain_games.common import make_game
 
 
+DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+
+
 def is_prime(number):
     if number <= 1:
         return False
@@ -19,7 +22,7 @@ def get_correct_answer(number):
 def brain_prime(start_wins_count):
     random_num = get_random_int(end_with=100)
 
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
+    print(DESCRIPTION)
     question = f'Question: {random_num}'
 
     correct_answer = get_correct_answer(random_num)

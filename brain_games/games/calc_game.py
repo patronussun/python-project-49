@@ -3,6 +3,9 @@ from brain_games.utils import get_random_int
 from brain_games.common import make_game
 
 
+DESCRIPTION = 'What is the result of the expression?'
+
+
 def get_correct_answer(first, second, sign):
     match sign:
         case '+':
@@ -24,7 +27,7 @@ def brain_calc(start_wins_count):
     random_second = get_random_int(start_with=0, end_with=5)
     random_sign = get_random_math()
 
-    print('What is the result of the expression?')
+    print(DESCRIPTION)
     question = f'Question: {random_first} {random_sign} {random_second}'
 
     correct_answer = get_correct_answer(random_first,
