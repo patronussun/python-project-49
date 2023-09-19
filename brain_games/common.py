@@ -1,34 +1,25 @@
 import prompt
 from brain_games.cli import welcome_user
+import games
 
+GAMES_TO_WIN = 3
 
-def make_game(wins_count, question, correct_answer, current_game):
-    GAMES_TO_WIN = 3
+def run_game(game):
+    question, correct_answer = game.generate_round()
+    name = welcome_user()
 
-    print(current_game.DESCRIPTION)
+    print(games.DESCRIPTION)
     print(question)
+
     answer = prompt.string('Your answer: ')
 
-    if wins_count == GAMES_TO_WIN and str(answer) == str(correct_answer):
+    if game.wins_count == GAMES_TO_WIN and str(answer) == str(correct_answer):
         print('Correct!')
-        return True
+        print(f'Congratulations, {name}!')
     elif str(answer) != str(correct_answer):
         print(f"'{answer}' is wrong answer ;(. "
               f"Correct answer was '{correct_answer}'.")
-        return False
-    elif str(answer) == str(correct_answer) and wins_count < GAMES_TO_WIN:
-        print('Correct!')
-        return current_game(wins_count + 1)
-
-
-def print_game_result(name, result):
-    if result is False:
         print(f'Let\'s try again, {name}!')
-    if result is True:
-        print(f'Congratulations, {name}!')
-
-
-def run_game(game):
-    name = welcome_user()
-    result = game(start_wins_count=1)
-    print_game_result(name, result)
+    elif str(answer) == str(correct_answer) and game.wins_count < GAMES_TO_WIN:
+        print('Correct!')
+        return game(game.wins_count + 1)

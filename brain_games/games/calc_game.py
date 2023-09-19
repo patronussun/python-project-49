@@ -1,6 +1,6 @@
 import random
 from brain_games.utils import get_random_int
-from brain_games.common import make_game
+from brain_games.common import run_game
 
 
 def get_correct_answer(first, second, sign):
@@ -33,5 +33,5 @@ def generate_round():
 def brain_calc(start_wins_count):
     DESCRIPTION = 'What is the result of the expression?'
     question, correct_answer = generate_round()
-    result = make_game(start_wins_count, question, correct_answer, brain_calc)
+    result = run_game(brain_calc)
     return result
